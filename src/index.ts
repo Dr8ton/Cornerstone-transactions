@@ -84,9 +84,7 @@ async function navToSite(url: string | null, page: puppeteer.Page): Promise<pupp
 async function loginToCornerstone(page: puppeteer.Page): Promise<puppeteer.Page> {
     await page.waitForSelector('#userNameBox')
     await page.type('#userNameBox', CREDENTIALS.login);
-    console.log("login: ", CREDENTIALS.login)
     await page.type('#passWordBox', CREDENTIALS.password);
-    console.log("password: ", CREDENTIALS.password)
     await page.click('#submit');
     return page;
 }
